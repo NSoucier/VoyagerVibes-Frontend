@@ -11,7 +11,7 @@ import Explore from './Explore';
 import Profile from './Profile';
 import VoyagersAPI from './Api';
 import Error404 from './Error404';
-require('dotenv').config();
+// require('dotenv').config();
 
 function App() {
   // const [ msg, setMsg ] = useState(); 
