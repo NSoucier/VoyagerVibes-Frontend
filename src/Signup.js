@@ -36,7 +36,7 @@ function Signup({ register, setCurrentUser }) {
             // set currentuser state
             setCurrentUser(status.username)
             // redirect to explore page upon successful registration
-            navigate('/explore');
+            navigate('/');
         }
     }
 

@@ -18,8 +18,8 @@ function App() {
   const [ currentUser, setCurrentUser ] = useState(localStorage.user || '');
 
   // API setup - provide system instructions/context to Gemini AI
-  const genAI = new GoogleGenerativeAI(`${process.env.GEMINI_API_KEY}`);
-  console.log('vars:', process.env.GOOG, process.env.NODE_ENV, process.env.NODE_VERSION, process.env.REACT_APP_BASE_URL, process.env.GEMINI)
+  const genAI = new GoogleGenerativeAI(`${process.env.GEMINI_API_KEY}`); // requires API key from Google Gemini AI
+  console.log('vars:', process.env.NODE_ENV, process.env.NODE_VERSION, process.env.REACT_APP_BASE_URL, process.env.SECRET_KEY)
 
   const model = genAI.getGenerativeModel({
     model: "gemini-1.5-flash",
