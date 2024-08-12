@@ -18,7 +18,7 @@ function Home() {
          {( localStorage.user ) ?
          (<div>
             <p className="message">Where will you go next, {localStorage.user}?</p>
-            <p className="message"><Link to='/explore'>Explore</Link> now!</p>
+            <p className="message"><Link to='/explore'>Explore</Link> now using our trip generator powered by Google's AI!</p>
         </div>
          )
          : 

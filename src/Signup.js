@@ -22,11 +22,16 @@ function Signup({ register, setCurrentUser }) {
     // submit form data to API and register user
     async function handleClick (evt) {
         evt.preventDefault();
+        // show loading spinner
+        const spinner = document.getElementById('buffering');
+        spinner.innerHTML = '<img src="https://www.jsfirm.com/resources/ajax-loader.gif" id="spinner"/>';
+        
         let status = await register(form);
         // if present, show errors
         if (!status.username) {
             const error = document.getElementById('error');
             error.innerText = status;
+            spinner.innerHTML = '';
         } else {
             // set currentuser state
             setCurrentUser(status.username)
@@ -61,6 +66,7 @@ function Signup({ register, setCurrentUser }) {
                 </FormGroup>{" "}            
                 <p id="error" style={{color: 'red'}}></p>
                 <Button color="success" onClick={handleClick}>Submit</Button>
+                <div id="buffering"></div>
             </Form>
       </>
     )

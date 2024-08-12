@@ -22,6 +22,9 @@ function Login({ login, setCurrentUser }) {
     // authenticates user's login credentials
     async function handleClick (evt) {
         evt.preventDefault();
+        // show loading spinner
+        const spinner = document.getElementById('buffering');
+        spinner.innerHTML = '<img src="https://www.jsfirm.com/resources/ajax-loader.gif" id="spinner"/>';
         // check credentials with db
         let status = await login(form);
         // if present, show errors
@@ -29,12 +32,13 @@ function Login({ login, setCurrentUser }) {
             const error = document.getElementById('error');
             console.error('Error: ', error)
             error.innerText = status;
+            spinner.innerHTML = '';
         } else {
             // set currentuser state
             setCurrentUser(status.username)
             localStorage.setItem('user', status.username);
             // redirect to explore page upon successful attempt
-            navigate('/explore');
+            navigate('/');
         }
     }
 
@@ -53,6 +57,7 @@ function Login({ login, setCurrentUser }) {
                     <p id="error" style={{color: 'red'}}></p>
                     <Button color="success" onClick={handleClick}>Submit</Button>
                     <p id="message">Don't have an account yet? Sign up <Link to='/signup'>here</Link>!</p>
+                    <div id="buffering"></div>
                 </Form>
 
             ) : (

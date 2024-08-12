@@ -88,7 +88,7 @@ function Explore({ getItinerary, currentUser, saveItinerary }) {
         <>
          { localStorage.user ? (
                 <div className="itinerary">
-                    <h2 id="title">Let our AI guide the way!</h2>
+                    <h2 id="title">Let our AI guide your way!</h2>
                     <Form id="loginForm">
                         <FormGroup>
                             <Label for="destination">Destination</Label>

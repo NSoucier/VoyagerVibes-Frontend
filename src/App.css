@@ -9,3 +9,8 @@
   margin-top: 50px;
   color: rgba(29, 29, 29, 0.712);
 }
+
+#spinner {
+  margin-top: 20px;
+  width: 80px;
+}
