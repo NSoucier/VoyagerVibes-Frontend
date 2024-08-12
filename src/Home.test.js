@@ -5,11 +5,11 @@ import { Route, Routes, MemoryRouter, BrowserRouter } from "react-router-dom";
 
 // smoke test
 it("renders without crashing", async function () {
-        render(
-            <BrowserRouter>
-                <Home />
-            </BrowserRouter>
-          );
+    render(
+        <BrowserRouter>
+            <Home />
+        </BrowserRouter>
+        );
 });
 
 // snapshot test
@@ -32,7 +32,7 @@ it("displays a login button", function() {
     expect(container.querySelector('#home-login')).toBeInTheDocument();
 });
 
-it("displays a welcome message to user", function() {
+it("displays a welcome message to logged in user", function() {
     localStorage.user = 'testUser'
     const {container} = render(
         <BrowserRouter>

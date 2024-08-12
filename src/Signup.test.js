@@ -5,13 +5,11 @@ import { Route, Routes, MemoryRouter, BrowserRouter } from "react-router-dom";
 
 // smoke test
 it("renders without crashing", async function () {
-    await act(() => {
-        render(
-            <BrowserRouter>
-                <Signup />
-            </BrowserRouter>
-          );
-    });
+    render(
+        <BrowserRouter>
+            <Signup />
+        </BrowserRouter>
+    );
 });
 
 // snapshot test
@@ -22,4 +20,14 @@ it("matches snapshot", function() {
         </BrowserRouter>
       );
     expect(asFragment()).toMatchSnapshot();
+});
+
+it("displays a sign up form", function() {
+    const {container} = render(
+        <BrowserRouter>
+            <Signup />
+        </BrowserRouter>
+      );
+
+    expect(container.querySelector('#loginForm')).toBeInTheDocument();
 });

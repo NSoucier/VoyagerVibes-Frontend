@@ -61,7 +61,7 @@ function Profile({ currentUser, getUser, updateUser, getItineraries, removeItine
 
     return (
         <> 
-            { currentUser ? (
+            { localStorage.user ? (
                 <>
                     <div id="header">
                         <img alt="profile-picture" id="profile-picture" src={profile.picture}/>
