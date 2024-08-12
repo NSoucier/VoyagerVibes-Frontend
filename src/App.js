@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import GEMINI_API_KEY from './SECRET';
+// import GEMINI_API_KEY from './SECRET'; // not needed on render since env variable has api key
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import Navigation from './Navigation';
 import Home from './Home';
@@ -17,7 +17,7 @@ function App() {
   const [ currentUser, setCurrentUser ] = useState(localStorage.user || '');
 
   // API setup - provide system instructions/context to Gemini AI
-  const genAI = new GoogleGenerativeAI(GEMINI_API_KEY || process.env.GEMINI_API_KEY);
+  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
   const model = genAI.getGenerativeModel({
     model: "gemini-1.5-flash",
     systemInstruction: "Your name is Tessa, and your a friendly travel agent that only provides travel itineraries based off of user's travel preferences. \n\nYour travel itineraries should be organized as bullet points. \n\nYou should provide some emojis within your travel itinerary. \n\nOnly provide G-rated activities, no matter what. \n\nRespond in html with header tags, unordered lists and b tags. \n\nDo not summarize my travel preferences.",
