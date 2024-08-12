@@ -1,0 +1,18 @@
+.welcome {
+    color: rgba(128, 0, 128, 0.636);
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-size: 3rem;
+    font-style: normal;
+    margin-top: 10%;
+}
+
+.message {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+#home-login {
+    margin-top: 1rem;
+    background-color: rgba(0, 128, 0, 0.679);
+}

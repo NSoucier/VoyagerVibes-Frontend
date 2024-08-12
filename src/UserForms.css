@@ -1,0 +1,17 @@
+#loginForm {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 40%;
+    margin: 2rem auto;
+    
+}
+
+#message {
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+ 
+/* .itinerary {
+    background-color: rgba(255, 255, 255, 0.622);
+} */

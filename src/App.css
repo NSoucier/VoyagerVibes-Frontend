@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+  padding-top: 60px;
+  width: 100vw;
+  height: 100vh;
+}
+
+#error404 {
+  margin-top: 50px;
+  color: rgba(29, 29, 29, 0.712);
+}

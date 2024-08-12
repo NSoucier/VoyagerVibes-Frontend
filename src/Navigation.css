@@ -1,0 +1,20 @@
+#toggler {
+    border: none;
+    color: rgba(0, 0, 0, 0);
+}
+
+#links {
+    text-decoration: none;
+    color: black;
+}
+
+#nav {
+    background-color: rgba(230, 230, 250, 0.933);
+    border-bottom: 3px solid rgba(128, 0, 128, 0.636);
+}
+
+.navbar-brand {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+}

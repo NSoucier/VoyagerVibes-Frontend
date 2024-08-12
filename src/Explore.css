@@ -1,0 +1,35 @@
+ul {
+    text-align: left;
+}
+
+#output {
+    width: 70%;
+    padding-bottom: 50px;
+    margin: 30px auto;
+}
+
+#duration {
+    width: 80%;
+}
+
+#loading {
+    width: 150px;
+}
+
+#preferences {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+#options { 
+    text-align: left;
+    margin-left: 18%;
+}
+
+#save {
+    margin-left: 20px;
+}
+
+#title {
+    margin-top: 20px;
+}

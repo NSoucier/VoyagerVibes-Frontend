@@ -1,0 +1,15 @@
+#history {
+    width: 70%;
+    margin: 0 auto;
+}
+
+#delete {
+    margin-right: 20px;
+    padding: 4px 10px;
+    background-color: rgb(238, 62, 62);
+    border: none;
+}
+
+#trips {
+    padding-bottom: 50px;
+}
