@@ -22,7 +22,7 @@ class VoyagersAPI {
             return (await axios({ url, method, data, params })).data;
         } catch (err) {
             console.error("API Error:", err.response);
-            let message = err.response.data.error.message;
+            let message = err.response.data;
             throw Array.isArray(message) ? message : [message];
         }
     }

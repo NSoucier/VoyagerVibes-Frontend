@@ -30,7 +30,6 @@ function Login({ login, setCurrentUser }) {
         // if present, show errors
         if (!status.username) {
             const error = document.getElementById('error');
-            console.error('Error: ', error)
             error.innerText = status;
             spinner.innerHTML = '';
         } else {
