@@ -14,15 +14,12 @@ import Error404 from './Error404';
 // require('dotenv').config();
 
 function App() {
-  // const [ msg, setMsg ] = useState(); 
   const [ currentUser, setCurrentUser ] = useState(localStorage.user || '');
 
-  // API setup - provide system instructions/context to Gemini AI
-  const genAI = new GoogleGenerativeAI(`${process.env.GEMINI_API_KEY || GEMINI_API_KEY}`); // requires API key from Google Gemini AI
-  console.log('vars:', process.env.NODE_ENV, process.env.NODE_VERSION, process.env.REACT_APP_BASE_URL, process.env.SECRET_KEY)
-  process.env.MY_VARIABLE = 'ahoy';
-  console.log('env:', process.env.MY_VARIABLE, GEMINI_API_KEY)
+  console.log('env keys:', process.env.NODE_ENV, process.env.NODE_VERSION, process.env.REACT_APP_BASE_URL, process.env.SECRET_KEY)
 
+  // API setup - provide system instructions/context to Gemini AI
+  const genAI = new GoogleGenerativeAI(`${process.env.SECRET_KEY}`); // requires API key from Google Gemini AI
   const model = genAI.getGenerativeModel({
     model: "gemini-1.5-flash",
     systemInstruction: "Your name is Tessa, and your a friendly travel agent that only provides travel itineraries based off of user's travel preferences. \n\nYour travel itineraries should be organized as bullet points. \n\nYou should provide some emojis within your travel itinerary. \n\nOnly provide G-rated activities, no matter what. \n\nRespond in html with header tags, unordered lists and b tags. \n\nDo not summarize my travel preferences.",
