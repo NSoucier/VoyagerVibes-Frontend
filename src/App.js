@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 // import GEMINI_API_KEY from './SECRET'; // not needed on render since env variable has api key
+import GEMINI_API_KEY from './etc/secrets/SECRET.js';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import Navigation from './Navigation';
 import Home from './Home';
@@ -18,8 +19,10 @@ function App() {
   const [ currentUser, setCurrentUser ] = useState(localStorage.user || '');
 
   // API setup - provide system instructions/context to Gemini AI
-  const genAI = new GoogleGenerativeAI(`${process.env.GEMINI_API_KEY}`); // requires API key from Google Gemini AI
+  const genAI = new GoogleGenerativeAI(`${process.env.GEMINI_API_KEY || GEMINI_API_KEY}`); // requires API key from Google Gemini AI
   console.log('vars:', process.env.NODE_ENV, process.env.NODE_VERSION, process.env.REACT_APP_BASE_URL, process.env.SECRET_KEY)
+  process.env.MY_VARIABLE = 'ahoy';
+  console.log('env:', process.env.MY_VARIABLE, GEMINI_API_KEY)
 
   const model = genAI.getGenerativeModel({
     model: "gemini-1.5-flash",
