@@ -11,15 +11,9 @@ import Explore from './Explore';
 import Profile from './Profile';
 import VoyagersAPI from './Api';
 import Error404 from './Error404';
-// require('dotenv').config();
 
 function App() {
   const [ currentUser, setCurrentUser ] = useState(localStorage.user || '');
-
-  console.log('env keys:', process.env.NODE_ENV,
-    process.env.NODE_VERSION, 
-    process.env.REACT_APP_BASE_URL, 
-    process.env.REACT_APP_API_KEY)
 
   // API setup - provide system instructions/context to Gemini AI
   const genAI = new GoogleGenerativeAI(`${process.env.REACT_APP_API_KEY}`); // requires API key from Google Gemini AI
