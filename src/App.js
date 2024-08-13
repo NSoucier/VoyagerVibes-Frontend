@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
 // import GEMINI_API_KEY from './SECRET'; // not needed on render since env variable has api key
-import GEMINI_API_KEYy from 'SECRET';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import Navigation from './Navigation';
 import Home from './Home';
