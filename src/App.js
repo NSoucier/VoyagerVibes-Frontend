@@ -21,7 +21,7 @@ function App() {
   const genAI = new GoogleGenerativeAI(`${process.env.GEMINI_API_KEY || GEMINI_API_KEY}`); // requires API key from Google Gemini AI
   console.log('vars:', process.env.NODE_ENV, process.env.NODE_VERSION, process.env.REACT_APP_BASE_URL, process.env.SECRET_KEY)
   process.env.MY_VARIABLE = 'ahoy';
-  console.log('env:', process.env.MY_VARIABLE, GEMINI_API_KEY, GEMINI_API_KEYy)
+  console.log('env:', process.env.MY_VARIABLE, GEMINI_API_KEY)
 
   const model = genAI.getGenerativeModel({
     model: "gemini-1.5-flash",
