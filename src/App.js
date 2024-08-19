@@ -15,7 +15,7 @@ import Error404 from './Home/Error404';
 function App() {
   const [ currentUser, setCurrentUser ] = useState(localStorage.user || '');
 
-  // API setup - provide system instructions/context to Gemini AI
+  // API setup - provide system instructions/context to Gemini AI to craft appropriate response
   const genAI = new GoogleGenerativeAI(`${process.env.REACT_APP_API_KEY}`); // requires API key from Google Gemini AI
   const model = genAI.getGenerativeModel({
     model: "gemini-1.5-flash",
