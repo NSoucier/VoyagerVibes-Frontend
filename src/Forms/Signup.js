@@ -5,6 +5,7 @@ import './UserForms.css'
 
 function Signup({ register, setCurrentUser }) {
     const [ form, setForm ] = useState({username: '', email: '', firstName:'', lastName: '', password: ''});
+    const [ errorMsg, setErrorMsg ] = useState('');
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -24,14 +25,13 @@ function Signup({ register, setCurrentUser }) {
         evt.preventDefault();
         // show loading spinner
         const spinner = document.getElementById('buffering');
-        spinner.innerHTML = '<img src="https://www.jsfirm.com/resources/ajax-loader.gif" id="spinner"/>';
-        
+        spinner.style.display = 'block';
+    
         let status = await register(form);
         // if present, show errors
         if (!status.username) {
-            const error = document.getElementById('error');
-            error.innerText = status;
-            spinner.innerHTML = '';
+            setErrorMsg(status);
+            spinner.style.display = 'none';
         } else {
             // set currentuser state
             setCurrentUser(status.username)
@@ -61,12 +61,14 @@ function Signup({ register, setCurrentUser }) {
                     <Label for="lastName">Last name</Label>
                 </FormGroup>{" "}
                 <FormGroup floating>
-                    <Input name="password" type="password" placeholder="" onChange={handleInput}/>
+                    <Input name="password" type="password" placeholder="" min={8} onChange={handleInput}/>
                     <Label for="password">Password</Label>
                 </FormGroup>{" "}            
-                <p id="error" style={{color: 'red'}}></p>
+                <p id="error" style={{color: 'red'}}>{errorMsg}</p>
                 <Button color="success" onClick={handleClick}>Submit</Button>
-                <div id="buffering"></div>
+                <div id="buffering" style={{display: "none"}}>
+                        <img src="https://www.jsfirm.com/resources/ajax-loader.gif" id="spinner"/>
+                    </div>
             </Form>
       </>
     )

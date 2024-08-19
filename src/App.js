@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import './App.css';
 // import GEMINI_API_KEY from './SECRET'; // not needed on render since env variable has api key
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import Navigation from './Navigation';
-import Home from './Home';
+import Navigation from './NavBar/Navigation';
+import Home from './Home/Home';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Login from './Login';
-import Signup from './Signup';
-import Explore from './Explore';
-import Profile from './Profile';
-import VoyagersAPI from './Api';
-import Error404 from './Error404';
+import Login from './Forms/Login';
+import Signup from './Forms/Signup';
+import Explore from './Itinerary/Explore';
+import Profile from './User/Profile';
+import VoyagersAPI from './API/Api';
+import Error404 from './Home/Error404';
 
 function App() {
   const [ currentUser, setCurrentUser ] = useState(localStorage.user || '');

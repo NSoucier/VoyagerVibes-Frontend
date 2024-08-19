@@ -5,6 +5,7 @@ import './UserForms.css'
 
 function Login({ login, setCurrentUser }) {
     const [ form, setForm ] = useState({username: '', password: ''});
+    const [ errorMsg, setErrorMsg ] = useState('');
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -22,22 +23,28 @@ function Login({ login, setCurrentUser }) {
     // authenticates user's login credentials
     async function handleClick (evt) {
         evt.preventDefault();
-        // show loading spinner
-        const spinner = document.getElementById('buffering');
-        spinner.innerHTML = '<img src="https://www.jsfirm.com/resources/ajax-loader.gif" id="spinner"/>';
-        // check credentials with db
-        let status = await login(form);
-        // if present, show errors
-        if (!status.username) {
-            const error = document.getElementById('error');
-            error.innerText = status;
-            spinner.innerHTML = '';
+
+        if(!form.username.length || !form.password.length) {
+            setErrorMsg("Please enter username and password.");
         } else {
-            // set currentuser state
-            setCurrentUser(status.username)
-            localStorage.setItem('user', status.username);
-            // redirect to explore page upon successful attempt
-            navigate('/');
+            // show loading spinner
+            const spinner = document.getElementById('buffering');
+            spinner.style.display = 'block';
+
+            // check credentials with db
+            let status = await login(form);
+            // if present, show errors
+            if (!status.username) {
+                console.error('Error: ', status)
+                setErrorMsg(status);
+                spinner.style.display = 'none';
+            } else {
+                // set currentuser state
+                setCurrentUser(status.username)
+                localStorage.setItem('user', status.username);
+                // redirect to explore page upon successful attempt
+                navigate('/');
+            }            
         }
     }
 
@@ -53,10 +60,12 @@ function Login({ login, setCurrentUser }) {
                         <Input name="password" type="password" placeholder="" onChange={handleInput}/>
                         <Label for="password">Password</Label>
                     </FormGroup>{" "}
-                    <p id="error" style={{color: 'red'}}></p>
+                    <p id="error" style={{color: 'red'}}>{errorMsg}</p>
                     <Button color="success" onClick={handleClick}>Submit</Button>
                     <p id="message">Don't have an account yet? Sign up <Link to='/signup'>here</Link>!</p>
-                    <div id="buffering"></div>
+                    <div id="buffering" style={{display: "none"}}>
+                        <img src="https://www.jsfirm.com/resources/ajax-loader.gif" id="spinner"/>
+                    </div>
                 </Form>
 
             ) : (
