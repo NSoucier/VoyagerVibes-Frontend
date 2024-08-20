@@ -119,7 +119,7 @@ function App() {
 
         <Routes>
           <Route path='/' element={<Home />}/>
-          <Route path='/login' element={<Login login={login} setCurrentUser={setCurrentUser}/>}/>
+          <Route path='login' element={<Login login={login} setCurrentUser={setCurrentUser}/>}/>
           <Route path='/signup' element={<Signup register={register} setCurrentUser={setCurrentUser}/>}/>
           <Route path='/explore' element={<Explore getItinerary={getItinerary} currentUser={currentUser} saveItinerary={saveItinerary}/>}/>
           <Route path='/profile' element={<Profile currentUser={currentUser} getUser={getUser} updateUser={updateUser} getItineraries={getItineraries} removeItinerary={removeItinerary}/>}/>
