@@ -1,7 +1,7 @@
 # Voyager Vibes (Frontend)
 
 ## DEPLOYED AT
-Visit Voyager Vibes at: https://voyagervibes.onrender.com
+Visit Voyager Vibes at: https://voyagervibes.vercel.app
 
 ## GOAL OF APPLICATION
 Have you ever found yourself spending countless hours online browsing a multitude of blogs and pinterest posts for the best activities to schedule on your upcoming vacation? Cut that time down to a fraction with your new best travel buddy - Voyager Vibes. The goal of this app is to reduce time spent sifting through countless websites by providing you with the perfect travel itinerary, tailored to your own personal preferences. You input your destination, trip length and your ideal type of activities and Voyager Vibes will give you a perfect itinerary. The app will also let you register your own account and keep track of your favorite itineraries for future use and past itineraries for sharing on social media.
@@ -40,6 +40,3 @@ Please leave a comment for any future features you would like to see implemented
 2. Create link to share itinerary on social media
 3. Allow user to follow other users accounts and view their favorite itineraries
 4. Include section for user to share their photos associated with past trip itineraries
-
-
-# VoyagerVibes-Frontend
