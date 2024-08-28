@@ -89,7 +89,7 @@ function Explore({ getItinerary, currentUser, saveItinerary }) {
          { localStorage.user ? (
                 <div className="itinerary">
                     <h2 id="title">Let our AI guide your way!</h2>
-                    <Form id="loginForm">
+                    <Form id="exploreForm">
                         <FormGroup>
                             <Label for="destination">Destination</Label>
                             <Input name="destination" type="text" placeholder="City/town" onChange={handleInput}/>
@@ -137,7 +137,7 @@ function Explore({ getItinerary, currentUser, saveItinerary }) {
                             <Label for="activities">Not listed above? List some activities you would like to include:</Label>
                             <Input name="activities" type="text" placeholder="cooking class, hot springs, etc." onChange={handleInput}/>
                         </FormGroup>                
-                        <Button color="success" onClick={generate}>Generate</Button>
+                        <Button color="success" id="generate" onClick={generate}>Generate</Button>
                         <Button color="primary" id="save" disabled={button} onClick={hanldeSave}>Save itinerary</Button>
                     </Form>
                     <div id="output">

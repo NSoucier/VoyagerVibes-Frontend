@@ -3,7 +3,7 @@ ul {
 }
 
 #output {
-    width: 70%;
+    width: 80%;
     padding-bottom: 50px;
     margin: 30px auto;
 }
@@ -27,9 +27,21 @@ ul {
 }
 
 #save {
-    margin-left: 20px;
+    margin: 8px;
+}
+
+#generate {
+    margin: 8px;
 }
 
 #title {
     margin-top: 20px;
+}
+
+#exploreForm {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 1rem;
+    width: 70%;
+    margin: 2rem auto;
 }
