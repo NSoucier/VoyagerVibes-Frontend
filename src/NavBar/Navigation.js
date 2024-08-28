@@ -21,7 +21,7 @@ import './Navigation.css';
             { localStorage.user ? (
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink><Link id="links" to='/explore'>Explore</Link></NavLink>
+                  <NavLink onClick={toggle} ><Link id="links" to='/explore'>Explore</Link></NavLink>
                 </NavItem>
               </Nav>              
               ) : ''
@@ -31,20 +31,20 @@ import './Navigation.css';
                 (
                   <>
                     <NavItem >
-                      <NavLink><Link id="links" to='/profile'>{localStorage.user}</Link></NavLink>
+                      <NavLink onClick={toggle} ><Link id="links" to='/profile'>{localStorage.user}</Link></NavLink>
                     </NavItem>
                     <NavItem>
-                      <NavLink><Link id="links" to='/' onClick={logoutUser}>Logout</Link></NavLink>
+                      <NavLink onClick={toggle} ><Link id="links" to='/' onClick={logoutUser}>Logout</Link></NavLink>
                     </NavItem>                
                   </>
                 )
                 : (
                   <>
                     <NavItem >
-                      <NavLink><Link id="links" to='/login'>Login</Link></NavLink>
+                      <NavLink><Link id="links" to='/login' onClick={toggle} >Login</Link></NavLink>
                     </NavItem>
                     <NavItem>
-                      <NavLink><Link id="links" to='/signup'>Sign Up</Link></NavLink>
+                      <NavLink><Link id="links" to='/signup'onClick={toggle} >Sign Up</Link></NavLink>
                     </NavItem>                
                   </>
                 )
