@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Form, FormGroup, Label, Input, Button, UncontrolledCollapse, Card, CardBody } from "reactstrap";
+import { Form, FormGroup, Label, Input, Button, Collapse, Card, CardBody } from "reactstrap";
 import { Link, useNavigate } from "react-router-dom";
 import TripHistory from "./TripHistory";
 import './Profile.css';
@@ -11,6 +11,9 @@ function Profile({ currentUser, getUser, updateUser, getItineraries, removeItine
     const toggleForm = document.getElementById('toggle-form');
     const statusMsg = document.getElementById('status');
     const [ trips, setTrips ] = useState();
+    const [ isOpen, setIsOpen ] = useState(false);
+    
+    const toggle = () => setIsOpen(!isOpen);
 
     useEffect(function showProfile() {
         if (!currentUser) { // if no one is logged in, redirect to login page
@@ -69,7 +72,7 @@ function Profile({ currentUser, getUser, updateUser, getItineraries, removeItine
                             <h5 id="username">Username: {currentUser}</h5>
                             <div id="editProfile">
                                 <Button color="success" id="toggler">Edit profile</Button>
-                                <UncontrolledCollapse toggler="#toggler" id="toggle-form">
+                                <Collapse isOpen={isOpen} id="toggle-form">
                                     <Card id="editForm">
                                     <CardBody>
 
@@ -95,7 +98,7 @@ function Profile({ currentUser, getUser, updateUser, getItineraries, removeItine
 
                                     </CardBody>
                                     </Card>
-                                </UncontrolledCollapse>
+                                </Collapse>
                                 <p id="status" style={{ color: 'darkgreen', fontWeight: 'bold'}}></p>
                             </div>
                         </div>
