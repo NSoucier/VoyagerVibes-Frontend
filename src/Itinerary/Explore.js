@@ -137,7 +137,7 @@ function Explore({ getItinerary, currentUser, saveItinerary }) {
                             <Label for="activities">Not listed above? List some activities you would like to include:</Label>
                             <Input name="activities" type="text" placeholder="cooking class, hot springs, etc." onChange={handleInput}/>
                         </FormGroup>                
-                        <Button color="success" onClick={generate}>Generarte</Button>
+                        <Button color="success" onClick={generate}>Generate</Button>
                         <Button color="primary" id="save" disabled={button} onClick={hanldeSave}>Save itinerary</Button>
                     </Form>
                     <div id="output">
