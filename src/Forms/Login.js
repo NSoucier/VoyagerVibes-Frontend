@@ -71,6 +71,10 @@ function Login({ login, setCurrentUser }) {
             ) : (
                 <p>Invalid request.</p>
             )}
+
+            <div id="footer">
+                <a href='https://soucier.vercel.app/' target="_blank" rel="noopener noreferrer">© Nathan Soucier</a>
+            </div>
         </>     
 
     );
