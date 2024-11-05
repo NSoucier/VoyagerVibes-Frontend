@@ -23,6 +23,10 @@ function Home() {
          )
          : 
          (<Button color="success" id="home-login" onClick={handleClick}>Login</Button>)}
+
+         <div id="footer">
+            <a href='https://soucier.vercel.app/' target="_blank" rel="noopener noreferrer">© Nathan Soucier</a>
+        </div>
         </>
     )
 }
