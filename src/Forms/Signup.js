@@ -70,6 +70,10 @@ function Signup({ register, setCurrentUser }) {
                         <img src="https://www.jsfirm.com/resources/ajax-loader.gif" id="spinner"/>
                     </div>
             </Form>
+
+        <div id="footer">
+            <a href='https://soucier.vercel.app/' target="_blank" rel="noopener noreferrer">© Nathan Soucier</a>
+        </div>            
       </>
     )
 }
