@@ -8,7 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background: url(https://www.ucdavis.edu/sites/default/files/styles/ucd_panoramic_image/public/media/images/beaches-near-uc-davis.jpg?h=8e58fdb5&itok=UvPYdubQ); */
-  background:linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(249, 217, 255, 0.4)), url(https://www.ucdavis.edu/sites/default/files/styles/ucd_panoramic_image/public/media/images/beaches-near-uc-davis.jpg?h=8e58fdb5&itok=UvPYdubQ);  
+  background:linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(249, 217, 255, 0.7)), url(https://www.ucdavis.edu/sites/default/files/styles/ucd_panoramic_image/public/media/images/beaches-near-uc-davis.jpg?h=8e58fdb5&itok=UvPYdubQ);  
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
