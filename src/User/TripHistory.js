@@ -24,7 +24,6 @@ function TripHistory({ trips = [], deleteTrip }) {
     async function handleClick(evt) {
         await deleteTrip(evt.target.name);
     }
-    console.log('(((((((((((((((((((((()())))', Array.isArray(trips), trips);
 
     return (
         <div id="trips">
