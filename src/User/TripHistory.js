@@ -3,7 +3,7 @@ import './TripHistory.css';
 import { UncontrolledAccordion, AccordionItem, AccordionBody, AccordionHeader, Button } from "reactstrap";
 import Parser from 'html-react-parser';
 
-function TripHistory({ trips, deleteTrip }) {
+function TripHistory({ trips = [], deleteTrip }) {
     const history = {};
 
     useEffect(() => {
@@ -18,13 +18,13 @@ function TripHistory({ trips, deleteTrip }) {
                 }
             }
         }
-
     }, []);
 
     // handles deletion of itinerary
     async function handleClick(evt) {
         await deleteTrip(evt.target.name);
     }
+    console.log('(((((((((((((((((((((()())))', Array.isArray(trips), trips);
 
     return (
         <div id="trips">

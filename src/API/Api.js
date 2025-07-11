@@ -21,7 +21,7 @@ class VoyagersAPI {
         try {
             return (await axios({ url, method, data, params })).data;
         } catch (err) {
-            console.error("API Error:", err.response);
+            console.error("API Error:", err, err.response);
             let message = err.response.data;
             throw Array.isArray(message) ? message : [message];
         }

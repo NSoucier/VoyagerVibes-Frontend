@@ -71,7 +71,7 @@ function Profile({ currentUser, getUser, updateUser, getItineraries, removeItine
                         <div id="profile">
                             <h5 id="username">Username: {currentUser}</h5>
                             <div id="editProfile">
-                                <Button color="success" id="toggler">Edit profile</Button>
+                                <Button color="success" id="toggler" onClick={toggle}>Edit profile</Button>
                                 <Collapse isOpen={isOpen} id="toggle-form">
                                     <Card id="editForm">
                                     <CardBody>
